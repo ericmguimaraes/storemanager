@@ -1,6 +1,7 @@
 @extends('backpack::layout')
 
 @section('before_styles')
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 @endsection
 
 @section('header')
@@ -25,12 +26,6 @@
                 </div>
                 <div class="box-header with-border">
                   <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
-
-                  <script type="text/javascript">
-                  $(function() {
-                      $('input[name="daterange"]').daterangepicker();
-                  });
-                  </script>
                 </div>
                 <div class="box-body">
                   <table id="income_table" class="table table-bordered table-striped display">
@@ -116,5 +111,11 @@
 @endsection
 
 @section('after_scripts')
-
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('input[name="daterange"]').daterangepicker();
+        });
+    </script>
 @endsection
