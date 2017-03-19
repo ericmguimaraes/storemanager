@@ -90,6 +90,8 @@ class ReportController extends Controller
           'total_income' => $total_income,
           'total_expenses' => $total_expenses,
           'total' => $total,
+          'start_date' => $start_date->format('d/m/Y'),
+          'end_date' => $end_date->format('d/m/Y'),
         ]);
   	}
 

@@ -32,6 +32,9 @@
                 </button>
               </div>
             </form>
+            <div class="box-body">
+              <h5>De {{$start_date}} até {{$end_date}}</h5>
+            </div>
           </div>
           <div class="box box-default">
               <div class="box-header with-border">
@@ -70,6 +73,7 @@
                   <table id="income_table" class="table table-bordered table-striped display">
                     <thead>
                       <tr>
+                        <th>Data</th>
                         <th>Nome</th>
                         <th>Quantidade</th>
                         <th>Valor Unidade</th>
@@ -79,6 +83,7 @@
                     <tbody>
                      @foreach ($income as $i)
                         <tr>
+                          <th>{{ $i['date'] }}</th>
                           <th>{{ $i['name'] }}</th>
                           <th>{{ $i['qtd'] }}</th>
                           <th>R$ {{ $i['unit_value'] }}</th>
@@ -97,6 +102,7 @@
                   <table id="expenses_table" class="table table-bordered table-striped display">
                     <thead>
                       <tr>
+                        <th>Data</th>
                         <th>Nome</th>
                         <th>Quantidade</th>
                         <th>Valor Unidade</th>
@@ -106,6 +112,7 @@
                     <tbody>
                       @foreach ($expenses as $e)
                         <tr>
+                          <th>{{ $i['date'] }}</th>
                           <th>{{ $e['name'] }}</th>
                           <th>{{ $e['qtd'] }}</th>
                           <th>R$ {{ $e['unit_value'] }}</th>

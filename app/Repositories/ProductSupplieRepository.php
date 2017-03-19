@@ -95,7 +95,7 @@ class ProductSupplieRepository
          else
            $name = $transaction->supplie()->get()[0]->name;
          array_push($income, [
-           'date' => $transaction->created_at,
+           'date' => $transaction->created_at->format('d/m/Y'),
            'name' => $name,
            'qtd' => -1*$transaction->qtd,
            'unit_value' => $transaction->unit_value,
