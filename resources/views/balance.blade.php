@@ -19,13 +19,50 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-12">
+          <div class="col-md-12">
+            <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="box-title">Escolha o período do balanço: </div>
+            </div>
+            <form>
+              <div class="box-body">
+                <input type="text" id="daterange" name="daterange" />
+                <a href="" class="btn btn-xs btn-default"><i class="fa fa-search"></i>Pesquisar</a>
+              </div>
+            </form>
+          </div>
+          <div class="box box-default">
+              <div class="box-header with-border">
+                  <div class="box-title">Balanço</div>
+              </div>
+              <div class="box-body">
+                <table id="expenses_table" class="table table-bordered table-striped display">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Receita</th>
+                      <th>R$ {{$total_income}}</th>
+                    </tr>
+                    <tr>
+                      <th>Despesas</th>
+                       <th>R$ {{$total_expenses}}</th>
+                    </tr>
+                    <tr>
+                      <th>Total</th>
+                      <th>R$ {{$total}}</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
             <div class="box box-default">
                 <div class="box-header with-border">
                     <div class="box-title">Receita</div>
-                </div>
-                <div class="box-header with-border">
-                  <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
                 </div>
                 <div class="box-body">
                   <table id="income_table" class="table table-bordered table-striped display">
@@ -77,35 +114,6 @@
                   </table>
                 </div>
             </div>
-            <div class="box box-default">
-                <div class="box-header with-border">
-                    <div class="box-title">Balanço</div>
-                </div>
-                <div class="box-body">
-                  <table id="expenses_table" class="table table-bordered table-striped display">
-                    <thead>
-                      <tr>
-                        <th>Nome</th>
-                        <th>Valor</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>Receita</th>
-                        <th>R$ {{$total_income}}</th>
-                      </tr>
-                      <tr>
-                        <th>Despesas</th>
-                         <th>R$ {{$total_expenses}}</th>
-                      </tr>
-                      <tr>
-                        <th>Total</th>
-                        <th>R$ {{$total}}</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
@@ -117,5 +125,21 @@
         $(function() {
             $('input[name="daterange"]').daterangepicker();
         });
+
+        Date.prototype.toMMddyyyy = function() {
+
+            var padNumber = function(number) {
+
+                number = number.toString();
+
+                if (number.length === 1) {
+                    return "0" + number;
+                }
+                return number;
+            };
+
+            return padNumber(date.getMonth() + 1) + " "
+                 + padNumber(date.getDate()) + " " + date.getFullYear();
+        };
     </script>
 @endsection

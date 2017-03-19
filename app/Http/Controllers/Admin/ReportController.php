@@ -68,12 +68,19 @@ class ReportController extends Controller
 
     public function balance(Request $request)
   	{
+        $income = [];
+        $expenses = [];
+        $total_income =  0.00;
+        $total_expenses =  0.00;
+        $total = 0.00;
+
+
         return view('balance',[
-          'income' => [],
-          'expenses' => [],
-          'total_income' => 'x.xx',
-          'total_expenses' => 'x.xx',
-          'total' => 'x.xx',
+          'income' => $income,
+          'expenses' => $expenses,
+          'total_income' => $total_income,
+          'total_expenses' => $total_expenses,
+          'total' => $total,
         ]);
   	}
 
