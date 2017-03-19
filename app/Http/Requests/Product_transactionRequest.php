@@ -26,7 +26,7 @@ class Product_transactionRequest extends \Backpack\CRUD\app\Http\Requests\CrudRe
     {
         return [
              'product_id' => 'required',
-             'qtd' => 'required|integer|max:999',
+             'qtd' => 'required|integer|max:9999',
              'unit_value' => 'required|numeric'
         ];
     }

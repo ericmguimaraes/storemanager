@@ -24,10 +24,12 @@
             <div class="box-header with-border">
                 <div class="box-title">Escolha o período do balanço: </div>
             </div>
-            <form>
+            <form action="/admin/balance" method="GET" class="form-horizontal">
               <div class="box-body">
                 <input type="text" id="daterange" name="daterange" />
-                <a href="" class="btn btn-xs btn-default"><i class="fa fa-search"></i>Pesquisar</a>
+                <button type="submit" class="btn btn-default">
+                        <i class="fa fa-search"></i>Pesquisar
+                </button>
               </div>
             </form>
           </div>
@@ -80,7 +82,7 @@
                           <th>{{ $i['name'] }}</th>
                           <th>{{ $i['qtd'] }}</th>
                           <th>R$ {{ $i['unit_value'] }}</th>
-                          <th>R$ {{ $i['value'] }}</th>
+                          <th>R$ {{ $i['total_value'] }}</th>
                         </tr>
                       @endforeach
                     </tbody>
@@ -107,7 +109,7 @@
                           <th>{{ $e['name'] }}</th>
                           <th>{{ $e['qtd'] }}</th>
                           <th>R$ {{ $e['unit_value'] }}</th>
-                          <th>R$ {{ $e['value'] }}</th>
+                          <th>R$ {{ $e['total_value'] }}</th>
                         </tr>
                       @endforeach
                     </tbody>
