@@ -3,6 +3,8 @@
 It's my first Laravel project, the idea was to learn the framework by a "hands on" approach and also provide a tool to help the management of a friend's business. Pease check out https://backpackforlaravel.com/, it helped a lot to reduce the development time.
 
 Features:
+ - Login
+ - Register
  - Supplies Management
  - Supplies Transactions
  - Product Management
