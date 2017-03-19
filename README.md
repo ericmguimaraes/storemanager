@@ -15,6 +15,8 @@ Features:
 As a educational proporse project, please feel free to point out any wrongs or ways to improve the project, and also to use it in any way.
 Project avaliable at http://acaidoatleta.herokuapp.com/
 
+Big thanks to guiassemany(https://github.com/guiassemany), who helped with some questions.
+
 P.S.: Please ignore the the misspellings of some plural words, one of the packages that I used had problems with irregular plural nouns. Also, ignore the fact that there is only one repository class to manage all the models, it's ugly.
 
 #Screenshots
